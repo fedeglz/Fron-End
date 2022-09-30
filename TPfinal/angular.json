@@ -24,11 +24,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "TPfinal/node_modules/bootstrap/dist/css/bootstrap.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css"
               
             ],
             "scripts": [
-              "TPfinal/node_modules/bootstrap/dist/js/bootstrap.js"      
+              "node_modules/bootstrap/dist/js/bootstrap.js"      
             ]
           },
           "configurations": {
