@@ -9,14 +9,8 @@ const AUTHORITIES_KEY = 'AuthAuthorities';
   providedIn: 'root'
 })
 export class TokenService {
-  setUserName(nombreUsuario: string) {
-    throw new Error('Method not implemented.');
-  }
-  setAuthorities(authorities: string[]) {
-    throw new Error('Method not implemented.');
-  }
   roles: Array<string> = [];
-
+   
   constructor() { }
 
   public setToken(token: string): void {
@@ -28,7 +22,7 @@ export class TokenService {
     return sessionStorage.getItem(TOKEN_KEY)!;
   }
 
-  public setuserName(userName: string): void {
+  public setUserName(userName: string): void {
     window.sessionStorage.removeItem(USERNAME_KEY);
     window.sessionStorage.setItem(USERNAME_KEY, userName);
   }
@@ -38,7 +32,7 @@ export class TokenService {
 
   }
 
-  public serAuthorities(authorities: string[]): void{
+  public setAuthorities(authorities: string[]): void{
     window.sessionStorage.removeItem(AUTHORITIES_KEY);
     window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
   }
