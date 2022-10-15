@@ -28,8 +28,8 @@ public class PersonaController {
     }
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/personas/crear")
-    public String createPersona(@RequestBody Persona Persona){
-        ipersonaService.savePersona(Persona);
+    public String createPersona(@RequestBody Persona persona){
+        ipersonaService.savePersona(persona);
         return "La persona fue creada correctamente";
     }
     @PreAuthorize("hasRole('ADMIN')")
