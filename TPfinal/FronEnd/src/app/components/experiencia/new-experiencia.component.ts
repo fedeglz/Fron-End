@@ -13,6 +13,7 @@ export class NewExperienciaComponent implements OnInit {
   descripcionE: string = '';
 
   constructor(private sExperiencia: SExperienciaService, private router: Router){}
+  
   ngOnInit(): void {
   }
 
