@@ -6,22 +6,24 @@ package com.portfolio.fg.Dto;
 
 import javax.validation.constraints.NotBlank;
 
-public class dtoExperiencia {
+
+public class dtoEducacion {
     @NotBlank
     private String nombreE;
     @NotBlank
     private String descripcionE;
     
-    //Constructores
+    //Constructor
 
-    public dtoExperiencia() {
+    public dtoEducacion() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE) {
+    public dtoEducacion(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
-    //Getters & Setters
+    
+    //Getter & Setter
 
     public String getNombreE() {
         return nombreE;
@@ -38,5 +40,7 @@ public class dtoExperiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+    
+    
     
 }
