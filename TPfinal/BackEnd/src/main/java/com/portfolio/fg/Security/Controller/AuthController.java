@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://fronendfg.web.app")
+@CrossOrigin(origins = {"https://fronendfg.web.app", "http://localhost:4200"})
 public class AuthController {
 
     @Autowired
@@ -75,24 +75,25 @@ public class AuthController {
 
         return new ResponseEntity(new Mensaje("usuario guardado"), HttpStatus.CREATED);
     }
+
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
-        if (bindingResult.hasErrors())
+        if (bindingResult.hasErrors()) {
             return new ResponseEntity(new Mensaje("campos mal puestos"), HttpStatus.BAD_REQUEST);
-        
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(),loginUsuario.getPassword()));
-        
+        }
+
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        
+
         String jwt = jwtProvider.generateToken(authentication);
-        
+
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        
+
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
-        
+
         return new ResponseEntity(jwtDto, HttpStatus.OK);
-        
-           
+
     }
 
 }
