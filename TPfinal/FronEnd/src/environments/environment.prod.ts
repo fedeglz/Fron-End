@@ -8,6 +8,8 @@ export const environment = {
     authDomain: 'fronendfg.firebaseapp.com',
     messagingSenderId: '289113042865',
   },
-  production: true
+  production: true,
+  
+   URL: 'https://backfg.herokuapp.com/',
   
 };
