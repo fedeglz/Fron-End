@@ -10,6 +10,6 @@ export const environment = {
   },
   production: true,
   
-   URL: 'https://backfg.onrender.com',
+   URL: 'https://backfg.onrender.com/',
   
 };
